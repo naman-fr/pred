@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Radar Range Dashboard</title>
+</head>
+<body>
+  <h1>Latest Predicted Range:</h1>
+  <div id="range">-- m</div>
+  <script>
+    async function fetchRange() {
+      const res = await fetch('/data');
+      if (!res.ok) return;
+      const j = await res.json();
+      document.getElementById('range').textContent = j.distance.toFixed(2) + ' m';
+    }
+    setInterval(fetchRange, 1000);
+    fetchRange();
+  </script>
+</body>
+</html>
