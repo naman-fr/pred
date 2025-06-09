@@ -23,13 +23,13 @@ A modular, production-grade system for real-time radar phase-unwrapping and rang
 ## 🏗️ System Architecture
 
 ```mermaid
-graph TD;
+graph TD
     A[Simulate Phases] --> B[Predictor]
     B --> C[Blockchain Logger]
     B --> D[Dashboard]
     B --> E[MQTT Broker]
     E --> B
-    B --> F[AWS IoT/S3 (optional)]
+    B --> F[AWS IoT/S3]
     C --> D
 ```
 
